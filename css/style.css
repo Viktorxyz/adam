@@ -1,0 +1,51 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	height: 100vh;
+ 	/* background-image: url("../images/creationofadam.jpg"); */
+	background-position: cover;
+	background-size: auto;
+	background-repeat: no-repeat;
+}
+
+.login-area {
+	display: flex;
+	width: 50%;
+	height: 100vh;
+	background-color: grey;
+	justify-content: center;
+	margin-right: auto;
+	margin-left: auto;
+}
+.login-area--wrapper {
+	margin-top: auto;
+	margin-bottom: auto;
+}
+.login-area--wrapper input {
+	display: block;
+}
+
+.action-area {
+	display: flex;
+	position: absolute;
+	width: 100%;
+	height: 100px;
+	bottom: 0;
+	background: red;
+	justify-content: center;
+}
+.action-area--wrapper {
+	display: flex;
+	justify-content: center;
+}
+.action-area--wrapper input {
+	width: 64px;
+	height: 32px;
+	margin-top: auto;
+	margin-bottom: auto;
+}
+
+	
