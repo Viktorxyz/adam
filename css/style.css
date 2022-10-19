@@ -4,6 +4,7 @@
 }
 
 body {
+	background: white;
 	height: 100vh;
  	/* background-image: url("../images/creationofadam.jpg"); */
 	background-position: cover;
@@ -11,7 +12,7 @@ body {
 	background-repeat: no-repeat;
 }
 
-.login-area {
+.login-form {
 	display: flex;
 	width: 50%;
 	height: 100vh;
@@ -20,11 +21,11 @@ body {
 	margin-right: auto;
 	margin-left: auto;
 }
-.login-area--wrapper {
+.login-form--wrapper {
 	margin-top: auto;
 	margin-bottom: auto;
 }
-.login-area--wrapper input {
+.login-form--wrapper input {
 	display: block;
 }
 
@@ -48,4 +49,9 @@ body {
 	margin-bottom: auto;
 }
 
-	
+.debug {
+	position: absolute;
+	max-width: 482px;
+	height: auto;
+	top: 0;
+}

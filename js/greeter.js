@@ -1,12 +1,35 @@
-const username = document.getElementById("username");
-const password = document.getElementById("password");
+const username = document.getElementById('username');
+const password = document.getElementById('password');
 
-const shutdown = document.getElementById("shutdown");
-const restart = document.getElementById("restart");
-const hibernate = document.getElementById("hibernate");
+const shutdown = document.getElementById('shutdown');
+const restart = document.getElementById('restart');
+const suspend = document.getElementById('suspend');
+const debug = document.getElementById('debug');
+const login = document.getElementById('login');
 
-shutdown.addEventListener("click", () => { lightdm.shutdown(); });
-restart.addEventListener("click", () => { ligthdm.restart(); });
-hibernate.addEventListener("click", () => { ligthdm.hibernate(); });
+function start_authentication() {
+	console.log('start_authentication()');
+}
 
-test
+function users() {
+	for(let user of ligthdm.users) {
+		debug.appendChild(user);
+	}
+}
+// users();
+
+shutdown.addEventListener('click', () => { ligthdm.shutdown(); });
+restart.addEventListener('click', () => { ligthdm.restart(); });
+suspend.addEventListener('click', () => { ligthdm.hibernate(); });
+
+login.addEventListener('click', () => { start_authentication() });
+
+// 
+// ligthdm.respond(passwd);
+// ligthdm.authenticate(user_id);
+// start_authentication();
+// ligthdm.sessions;
+// ligthdm.users;
+// _util
+// ligthdm.is_authenticated()
+// ligthdm.authentication_user
