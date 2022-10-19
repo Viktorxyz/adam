@@ -24,6 +24,8 @@ suspend.addEventListener('click', () => { ligthdm.hibernate(); });
 
 login.addEventListener('click', () => { start_authentication() });
 
+// novi komentar
+
 // 
 // ligthdm.respond(passwd);
 // ligthdm.authenticate(user_id);
