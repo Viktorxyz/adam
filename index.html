@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<link rel='stylesheet' href='./css/style.css'>
+  </head>
+  <body>
+	<div id='prompt'></div>
+	<div class='login-form'>
+	  <div class='login-form--wrapper'>
+		<input class='username' id='username' type='text'/>
+		<input class='password' id='password' type='password'/>
+		<input class='login' id='login' value='Login' type="button"/>
+	  </div>
+	</div>
+	<div class='action-area'>
+	  <div class='action-area--wrapper'>
+		<input id='shutdown' type='button' value='shutdown' />
+		<input id='restart' type='button' value='restart' />
+		<input id='suspend' type='button' value='suspend' />
+	  </div>
+	</div>
+	<p id='debug' class='debug'></p>
+	<script src='js/greeter.js'></script>
+  </body>
+</html>
