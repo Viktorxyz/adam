@@ -1,6 +1,6 @@
 [theme]
 name=Adam
 description=Adam Theme
-engine=light-webkit2-greeter
+engine=lightdm-webkit2-greeter
 url=index.html
 session=cinnamon

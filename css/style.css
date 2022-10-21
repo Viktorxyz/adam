@@ -1,57 +1,92 @@
 * {
 	margin: 0;
 	padding: 0;
+	color: white;
+	font-size: 24px;
+}
+*::selection {
+	background: rgba(255, 255, 255, .5);
 }
 
 body {
-	background: white;
 	height: 100vh;
- 	/* background-image: url("../images/creationofadam.jpg"); */
-	background-position: cover;
-	background-size: auto;
-	background-repeat: no-repeat;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	background-color: #1B1A26;
 }
 
 .login-form {
-	display: flex;
-	width: 50%;
-	height: 100vh;
-	background-color: grey;
-	justify-content: center;
-	margin-right: auto;
-	margin-left: auto;
+	align-self: center;
+	position: relative;
+	width: 50vh;
+	height: 30vh;
+	border: solid white;
 }
 .login-form--wrapper {
-	margin-top: auto;
-	margin-bottom: auto;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: auto;
 }
-.login-form--wrapper input {
-	display: block;
+.row {
+	margin-inline: 48px;
+	margin-bottom: 48px;
+}
+.row input {
+	background: none;
+	border: 0;
+	outline: 0;
+	border-bottom: solid white;
+	width: 60%;
+	float: right;
+	caret-shape: block;
+}
+
+.session--wrapper {
+	display: flex;
+	justify-content: space-around;
+	width: 100%;
+	height: 50%;
+}
+
+.session {
+	display: flex;
+	position: absolute;
+	align-self: center;
+}
+.session--wrapper input {
+	border: 0;
+	outline: 0;
+	background: none;
+	cursor: pointer;
+	font-size: 32px;
 }
 
 .action-area {
 	display: flex;
 	position: absolute;
 	width: 100%;
-	height: 100px;
+	height: auto;
 	bottom: 0;
-	background: red;
-	justify-content: center;
+	justify-content: right;
 }
 .action-area--wrapper {
 	display: flex;
 	justify-content: center;
 }
 .action-area--wrapper input {
-	width: 64px;
-	height: 32px;
-	margin-top: auto;
-	margin-bottom: auto;
+	margin-bottom: 10px;
+	margin-right: 10px;
+	padding-inline: 10px;
+	width: auto;
+	height: 48px;
+	outline: none;
+	border: dashed white;
+	opacity: .3;
+	transition: .3s;
+	background: none;
 }
-
-.debug {
-	position: absolute;
-	max-width: 482px;
-	height: auto;
-	top: 0;
+.action-area--wrapper input:hover {
+	opacity: 1;
 }

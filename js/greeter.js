@@ -1,32 +1,48 @@
-const username = document.getElementById('username');
-const password = document.getElementById('password');
+const username = document.getElementById('input-user');
+const password = document.getElementById('input-password');
 
 const shutdown = document.getElementById('shutdown');
 const restart = document.getElementById('restart');
 const suspend = document.getElementById('suspend');
-const debug = document.getElementById('debug');
-const login = document.getElementById('login');
 
 function start_authentication() {
-	console.log('start_authentication()');
+    console.log(lightdm.is_authenticated);
+    console.log(lightdm.users);
+    console.log(lightdm.sessions);
+    console.log(lightdm.authentication_user);
+    console.log(lightdm.authentication_user);
+    console.log(password.value);
+    lightdm.respond(password.value);
 }
 
-function users() {
-	for(let user of ligthdm.users) {
-		debug.appendChild(user);
-	}
+function authenticate() {
+    console.log(username.value);
+    console.log(lightdm.users, lightdm.sessions);
+    lightdm.authenticate(username.value);
 }
-// users();
 
-shutdown.addEventListener('click', () => { ligthdm.shutdown(); });
-restart.addEventListener('click', () => { ligthdm.restart(); });
-suspend.addEventListener('click', () => { ligthdm.hibernate(); });
+function show_prompt(text, type) {
+    console.log(text, type);
+    if(type === 'password') {
+		password.focus();
+    }
+}
+function show_message(text, type) {
+    console.log(text, type);
+}
+function authentication_complete() {
+    lightdm.start_session_sync();
+}
 
-login.addEventListener('click', () => { start_authentication() });
+shutdown.addEventListener('click', () => { window.lightdm.shutdown(); });
+restart.addEventListener('click', () => { window.lightdm.restart(); });
+suspend.addEventListener('click', () => { window.lightdm.hibernate(); });
 
-// novi komentar
+password.addEventListener('focus', () => { authenticate(); });
+password.addEventListener('keypress', (e) => {
+	if(e.key === 'Enter') lightdm.respond(password.value);
+});
 
-// 
 // ligthdm.respond(passwd);
 // ligthdm.authenticate(user_id);
 // start_authentication();
