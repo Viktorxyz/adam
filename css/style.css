@@ -82,7 +82,7 @@ body {
 	width: auto;
 	height: 48px;
 	outline: none;
-	border: dashed white;
+	border: none;
 	opacity: .3;
 	transition: .3s;
 	background: none;
