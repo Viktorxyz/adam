@@ -5,6 +5,7 @@ const shutdown = document.getElementById('shutdown');
 const restart = document.getElementById('restart');
 const suspend = document.getElementById('suspend');
 // const battery = document.getElementById('battery');
+// const clock = document.getElementById('clock');
 
 function start_authentication() {
     console.log(lightdm.is_authenticated);
