@@ -40,7 +40,14 @@ suspend.addEventListener('click', () => { window.lightdm.hibernate(); });
 
 password.addEventListener('focus', () => { authenticate(); });
 password.addEventListener('keypress', (e) => {
-	if(e.key === 'Enter') lightdm.respond(password.value);
+    if(e.key === 'Enter'){
+	lightdm.respond(password.value);
+	if(!lightdm.is_authenticated) {
+	    password.value = '';
+	    username.value = '';
+	    username.focus();
+	}
+    }
 });
 
 // ligthdm.respond(passwd);
