@@ -4,6 +4,7 @@ const password = document.getElementById('input-password');
 const shutdown = document.getElementById('shutdown');
 const restart = document.getElementById('restart');
 const suspend = document.getElementById('suspend');
+// const battery = document.getElementById('battery');
 
 function start_authentication() {
     console.log(lightdm.is_authenticated);
