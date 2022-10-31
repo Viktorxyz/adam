@@ -4,8 +4,33 @@ const password = document.getElementById('input-password');
 const shutdown = document.getElementById('shutdown');
 const restart = document.getElementById('restart');
 const suspend = document.getElementById('suspend');
-// const battery = document.getElementById('battery');
-// const clock = document.getElementById('clock');
+
+const battery_display = document.getElementById('battery_display');
+const battery_parts = battery_display.getElementsByTagName('div');
+const battery_part = document.createElement('div');
+const battery_percentage = document.getElementById('battery_percentage');
+battery_part.classList.add('battery--part');
+
+
+navigator.getBattery().then((battery) => {
+    let level = Math.ceil(battery.level*10);
+    battery_percentage.innerHTML = battery.level*100+'%';
+    for(let i = 0; i < level; i++) {
+	let part = battery_part.cloneNode(true);
+	battery_display.appendChild(part);
+    }    
+    battery.addEventListener('levelchange', () => {
+	let _level = Math.ceil(battery.level*10);
+	if (level > _level) {
+	    battery_display.removeChild(battery_parts[0]);
+	} else if (level < _level) {
+	    let part = battery_part.cloneNode(true);
+	    battery_display.appendChild(part);
+	}
+	level = _level;
+	battery_percentage.innerHTML = battery.level*100+'%';
+    });
+});
 
 function start_authentication() {
     console.log(lightdm.is_authenticated);
