@@ -5,7 +5,7 @@ const shutdown = document.getElementById('shutdown');
 const restart = document.getElementById('restart');
 const suspend = document.getElementById('suspend');
 
-const battery_display = document.getElementById('battery_display');
+/* const battery_display = document.getElementById('battery_display');
 const battery_parts = battery_display.getElementsByTagName('div');
 const battery_part = document.createElement('div');
 const battery_percentage = document.getElementById('battery_percentage');
@@ -30,7 +30,7 @@ navigator.getBattery().then((battery) => {
 	level = _level;
 	battery_percentage.innerHTML = battery.level*100+'%';
     });
-});
+}); */
 
 function start_authentication() {
     console.log(lightdm.is_authenticated);
